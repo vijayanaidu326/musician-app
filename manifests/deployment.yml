@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vijaykumarmusicianapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vijaykumarmusicianapp
+  template:
+    metadata:
+      labels:
+        app: vijaykumarmusicianapp 
+    spec:
+      containers:
+        - name: vijaykumarmusicianapp 
+          image: magicreg.azurecr.io/vijaykumarmusicianapp
+          ports:
+          - containerPort: 3001
